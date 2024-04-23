@@ -25,7 +25,7 @@ env.config();
 
 mongoose
   .connect(
-    `mongodb+srv://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@cluster0.c3klu.mongodb.net/${process.env.MONGO_DB_DATABASE}?retryWrites=true&w=majority`
+    `mongodb://0.0.0.0:27017/${process.env.MONGO_DB_DATABASE}`
   )
   .then(() => {
     console.log("Database connected");
@@ -34,7 +34,7 @@ mongoose
 
 
 
-app.use(cors()) 
+app.use(cors())
 
 app.use(express.json());
 app.use(bodyParser.json());
